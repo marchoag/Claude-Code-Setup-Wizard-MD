@@ -14,6 +14,8 @@ This is an MD file that creates folders and MD files as explained below, and ena
 
 ## Setup (one time only at project start)
 
+[Download MD-CLAUDE-CODE-SETUP-WIZARD.md](https://raw.githubusercontent.com/marchoag/Claude-Code-Setup-Wizard-MD/main/MD-CLAUDE-CODE-SETUP-WIZARD.md)
+
   ```bash
   # Tell Claude at the start of a new project:
   "Run @md-claude-code-setup-wizard.md"
