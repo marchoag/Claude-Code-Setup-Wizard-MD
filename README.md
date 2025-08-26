@@ -1,4 +1,23 @@
 ## An MD file that functions as a Claude Code setup wizard to start new projects
+**⚠️ DISCLAIMER**
+
+  **USE AT YOUR OWN RISK** - This project is provided "AS IS" without warranty of
+   any kind, express or implied. The authors and contributors disclaim all
+  warranties, including but not limited to:
+
+  - **No Warranties**: No warranties of merchantability, fitness for a particular
+   purpose, or non-infringement
+  - **No Liability**: We are not liable for any damages, data loss, system
+  failures, or other issues arising from use of this software
+  - **User Responsibility**: You assume full responsibility for testing,
+  validation, and ensuring compatibility with your systems
+  - **No Support Guarantee**: No guarantee of maintenance, updates, or technical
+  support
+  - **Configuration Risk**: Modifying system configurations may affect your
+  development environment - backup your settings first
+
+  By using this software, you acknowledge that you understand these risks and
+  agree to use it entirely at your own discretion and risk.
 
 This is an MD file that creates folders and MD files as explained below, and enables you to easily start and end sessions and avoid auto-compacting when sessions run out of context.
 
