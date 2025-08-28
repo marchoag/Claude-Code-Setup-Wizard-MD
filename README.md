@@ -1,121 +1,64 @@
-## An MD file that functions as a Claude Code setup wizard to start new projects
-**⚠️ DISCLAIMER**
+## Features
 
-  **USE AT YOUR OWN RISK** - This project is provided "AS IS" without warranty of
-   any kind, express or implied. The authors and contributors disclaim all
-  warranties, including but not limited to:
+  - **3-file active system** (17KB total) - never exceeds context limits
+  - **Bulletproof security** - `.env*` file protection with honeypot testing
+  - **Session automation** - automated start/end protocols with perfect handoffs
+  - **Searchable archive** - unlimited knowledge preservation without context impact
+  - **Interactive setup** - 21-question wizard customizes system for your project
 
-  - **No Warranties**: No warranties of merchantability, fitness for a particular
-   purpose, or non-infringement
-  - **No Liability**: We are not liable for any damages, data loss, system
-  failures, or other issues arising from use of this software
-  - **User Responsibility**: You assume full responsibility for testing,
-  validation, and ensuring compatibility with your systems
-  - **No Support Guarantee**: No guarantee of maintenance, updates, or technical
-  support
-  - **Configuration Risk**: Modifying system configurations may affect your
-  development environment - backup your settings first
+  ## Quick Start
 
-  By using this software, you acknowledge that you understand these risks and
-  agree to use it entirely at your own discretion and risk.
+  1. Download [MD-CLAUDE-CODE-SETUP-WIZARD.md](https://raw.githubusercontent.com/marchoag/Claude-Code-Setup-Wizard-MD/main/MD-CLAUDE-CODE-SETUP-WIZARD.md)
+  2. Tell Claude: `"Run @md-claude-code-setup-wizard.md"`
+  3. Answer 21 setup questions
+  4. Start working: `"read @MD-ACTIVE/"` then `"session start"`
 
-This is an MD file that creates folders and MD files as explained below, and enables you to easily start and end sessions and avoid auto-compacting when sessions run out of context.
+  ## Usage
 
-  ### What's Included: MD-Claude-Code-Setup-Wizard.md (creates folders and files as described below)
+  **Session start**: `"read @MD-ACTIVE/"` then `"session start"`
+  
+  **Session end**: `"session end"`
 
-  Complete system for Claude Code optimization:
-  - **Setup automation** - Claude creates folder structure and files
-  - **Onboarding wizard** - Interactive 21 question setup guide that customizes files for your project/team
-  - **Session management** - Automated start/end protocols for perfect handoffs
-  - **Context optimization** - 4-file active system that never overflows
-  - **Knowledge preservation** - Searchable archive of all solutions and patterns
-  - **Project templates** - Ready-to-use files for any tech stack
+  ## What happens
 
-## Setup (one time only at project start)
+  **Session Start Process:**
+  1. Claude acknowledges security: "I will not open or read any `.env*` files. I will reference env by NAME only."
+  2. Claude reads MD-SESSION-PROTOCOL.md, latest session bookmark, and CHANGELOG-CURRENT.md in parallel
+  3. Claude echoes back: working relationship (CEO/CTO dynamics), current platform status, and today's priorities
+  4. Claude creates TodoWrite list from bookmark priorities
+  5. Claude auto-activates Technical Mastery Reference (ready for automatic searches)
+  6. Claude begins work on first task immediately
 
-[Download MD-CLAUDE-CODE-SETUP-WIZARD.md](https://raw.githubusercontent.com/marchoag/Claude-Code-Setup-Wizard-MD/main/MD-CLAUDE-CODE-SETUP-WIZARD.md)
+  **Session End Process:**
+  1. Claude updates CHANGELOG-CURRENT.md if new version exists
+  2. Claude syncs changes to CHANGELOG-FULL.md in archive
+  3. Claude creates new session bookmark with big-picture summary (✅ COMPLETED, 🔄 IN PROGRESS, 🚫 BLOCKED)
+  4. Claude archives previous bookmark to MD-ARCHIVE/bookmarks/
+  5. Claude updates Technical Mastery Reference with new debugging patterns learned
+  6. Claude asks: "Ready to commit and deploy? (y/n)"
+  7. If yes: Claude commits with intelligent message format and pushes to main
+  8. Claude confirms: "Session complete: [commit message] → deployed. Ready for next."
 
-  ```bash
-  # Tell Claude at the start of a new project:
-  "Run @md-claude-code-setup-wizard.md"
-  # Claude will then auto-archive this setup wizard into @MD-ARCHIVE
-```
+  ## Security
 
-## Session start
+  - Automatic `.env*` file protection
+  - Creates `.env.honeypot` for testing Claude's refusal behavior
+  - Environment variable safety protocols (server vs client)
+  - Runtime guards prevent accidental secret exposure
+  - Keeps a running "CHANGELOG.md" in MD-ARCHIVE updated at every session end
+  - Keeps a truncated "CHANGELOG-CURRENT.md" in MD-ACTIVE ~300 lines long
+  - If created, will update a "technical mastery" MD file in MD-ARCHIVE to learn as you go
+  - Prompts whether to push/commit/deploy all changes at session end
 
-  ```bash
-  # Tell Claude to read the MD Active folder and start your new session
-  "read @MD-ACTIVE/ and start session"
-```
+  ## Problem Solved
 
-## Session end
+  Claude Code sessions fail when documentation exceeds context limits. This system:
+  - Maintains 17KB active context (67% reduction from typical setups)
+  - Preserves complete project history in searchable archive
+  - Prevents session auto-compacting that loses critical information
+  - Enables perfect handoffs between sessions
 
-  ```bash
-  # Tell Claude to end the current session to avoid auto-compacting
-  "session end"
-```
+  ## Use at Your Own Risk
 
-
-  ## The Problem
-
-  Claude Code sessions fail when documentation gets too large. Teams lose solutions between sessions. Projects restart debugging from scratch every time. Session context gets auto-compacted losing
-  critical information.
-
-  ## The Solution
-
-  **MD-ACTIVE/** - 4 files, 60KB total (always fits in context)
-  - Session protocol with your working relationship and workflows
-  - Current session bookmark with priorities and status
-  - Project changelog and version history
-  - Complete build guide with architecture
-
-  **MD-ARCHIVE/** - Unlimited searchable knowledge base
-  - Technical mastery reference with all debugging patterns
-  - Historical session bookmarks
-  - Accumulated project knowledge
-
-  ## The Onboarding Wizard
-
-  Tell Claude to read the strategy document and it automatically:
-  - Creates folder structure (`mkdir MD-ACTIVE MD-ARCHIVE`)
-  - Runs interactive wizard asking about your role, project, tech stack, priorities
-  - Generates customized files with your specific working relationship
-  - Seeds technical knowledge base with your existing patterns
-  - Sets up session protocols tailored to your workflow
-
-  No manual file creation. No template copying. Fully automated personalization.
-
-  ## Session Handoffs
-
-  **Starting a session**: Say `"session start"` and Claude:
-  - Reads session protocol to understand your working relationship
-  - Reads latest session bookmark to see exactly where you left off
-  - Creates TodoWrite list from your documented priorities
-  - Activates technical mastery auto-search
-  - Begins work immediately with full context
-
-  **Ending a session**: Say `"session end"` and Claude:
-  - Creates new session bookmark with big-picture summary of what was accomplished
-  - Archives previous session materials to MD-ARCHIVE/
-  - Updates technical mastery reference with any new debugging patterns discovered
-  - Commits and deploys changes with intelligent commit messages
-  - Confirms readiness for next session
-
-  This prevents auto-compacting and ensures zero information loss between sessions.
-
-  ## Auto-Search During Work
-
-  Claude automatically searches the technical mastery archive when it recognizes:
-  - Authentication issues → finds auth debugging patterns
-  - Database errors → retrieves safety protocols
-  - Modal conflicts → applies proven solutions
-  - Infinite loops → uses established debugging strategies
-  - Deployment failures → references production fixes
-
- ## Results
-
-  - Zero context overflows across any project size
-  - Perfect session continuity with explicit start/end commands
-  - No repeated debugging of solved problems
-  - Institutional knowledge that compounds over time
-  - Prevents auto-compacting that loses critical information
+  This software is provided "AS IS" without warranty. Users assume full responsibility for testing and ensuring compatibility
+  with their systems. Backup your settings before use.
