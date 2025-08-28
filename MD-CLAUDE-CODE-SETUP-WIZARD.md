@@ -1,49 +1,49 @@
 # 🎯 THE DEFINITIVE CLAUDE CODE SETUP WIZARD
 Marc Hoag | marc@marchoag.com | github.com/marchoag | linkedin.com/in/marchoag | x.com/marchoag
 
-**Universal Documentation System for Maximum AI Productivity**
+**Battle-Tested Documentation System for Maximum AI Productivity**  
+*Includes bulletproof security protocols and 67% context optimization*
 
-Created: August 26, 2025
-
----
-
-## 🎬 PURPOSE: Lean Claude Code setup routine using 4 active MD files plus an MD file archive.
+Created: August 26, 2025  
+Optimized: August 28, 2025
 
 ---
 
-## 📁 THE 4-FILE ACTIVE SYSTEM
+## 🎬 PURPOSE: Ultra-optimized Claude Code setup using 3 active MD files (17KB total) plus searchable archive system with bulletproof security protocols.
+
+---
+
+## 📁 THE 3-FILE ACTIVE SYSTEM
 
 **MANDATORY STRUCTURE**: Your MD-ACTIVE/ folder must contain EXACTLY these files:
 
-### **1. MD-SESSION-PROTOCOL.md** (~4KB)
-**Purpose**: Session management and workflow automation  
+### **1. MD-SESSION-PROTOCOL.md** (~6KB)
+**Purpose**: Session automation + bulletproof security protocols  
 **Usage**: Read at every session start  
 **Contains**: 
 - Session start/end commands
-- Working relationship dynamics
-- Technical Mastery Reference triggers
-- Git commit workflows
+- **CRITICAL**: `.env*` file protection with honeypot testing
+- Working relationship dynamics (CEO/CTO challenge mandate)
+- Technical Mastery Reference auto-triggers
+- Git commit workflows with intelligent messages
+- Mandatory security acknowledgment at session start
 
-### **2. MD-YYYYMMDD-[SESSION-NAME].md** (~3-5KB)
+### **2. MD-YYYYMMDD-[SESSION-NAME].md** (~6KB)
 **Purpose**: Current session bookmark  
 **Usage**: Read at session start, archived at session end  
 **Contains**:
-- Last work completed (BIG PICTURE summary)
-- Current platform status
-- Next priorities (3-5 specific tasks)
-- Critical context and blockers
+- Last work completed (✅ COMPLETED, 🔄 IN PROGRESS, 🚫 BLOCKED)
+- Current platform status (version, branch, deployment state)
+- Next priorities (3-5 specific actionable tasks)
+- Critical context (gotchas, decisions, blockers)
 
-### **3. CHANGELOG.md** (~30KB)
-**Purpose**: Platform version history  
-**Usage**: Referenced when understanding product evolution  
-**Contains**: Version releases, feature additions, major changes
+### **3. CHANGELOG-CURRENT.md** (~5KB)
+**Purpose**: Recent version history only  
+**Usage**: Referenced for product evolution context  
+**Contains**: Last 5-10 versions with user-facing descriptions
 
-### **4. MD-[PROJECT-NAME]-BUILD-GUIDE.md** (~17KB)
-**Purpose**: Complete project architecture and development guide  
-**Usage**: Referenced when understanding codebase structure  
-**Contains**: Setup instructions, architecture, key patterns
-
-**TOTAL: ~60KB (well under 100KB limit)**
+**TOTAL: ~17KB (67% reduction from previous 52KB system)**  
+**BREAKTHROUGH**: Eliminates context overflow while preserving perfect continuity
 
 ---
 
@@ -67,29 +67,37 @@ Created: August 26, 2025
 - **Contains**: Urgent vs Important task categorization
 - **Updates**: Modified when priorities shift significantly
 
-### **Historical Archive Files**
-- **Session bookmarks**: All previous MD-YYYYMMDD-*.md files
-- **Strategy documents**: Product roadmaps, deployment guides
-- **Specialized guides**: Platform-specific documentation
+### **Organized Archive Structure**
+- **MD-ARCHIVE/bookmarks/**: All previous session bookmarks (chronological)
+- **MD-ARCHIVE/reference/**: Technical guides, full changelog, build guides
+  - CHANGELOG-FULL.md (complete version history)
+  - MD-[PROJECT]-BUILD-GUIDE.md (moved from MD-ACTIVE for context optimization)
+  - MD-CLAUDE-TECHNICAL-MASTERY-REFERENCE.md (debugging patterns)
+  - Strategy documents, deployment guides, specialized documentation
 
 ---
 
 ## 🤖 AUTOMATED CLAUDE BEHAVIORS
 
 ### **Session Start (User says "session start")**
-1. **Read** MD-SESSION-PROTOCOL.md
-2. **Read** latest session bookmark
-3. **Echo back** working relationship and status
-4. **Create TodoWrite** list from priorities
-5. **Auto-activate** Technical Mastery Reference (ready to search)
-6. **Begin work** on first task
+1. **Security First**: Acknowledge `.env*` protection policy
+2. **Read** MD-SESSION-PROTOCOL.md
+3. **Read** latest session bookmark  
+4. **Read** CHANGELOG-CURRENT.md
+5. **Echo back** working relationship and platform status
+6. **Create TodoWrite** list from bookmark priorities
+7. **Auto-activate** Technical Mastery Reference (ready to search)
+8. **Begin work** on first task
 
 ### **Session End (User says "session end")**
-1. **Create** new session bookmark with big-picture summary
-2. **Archive** previous bookmark to MD-ARCHIVE/
-3. **Update** Technical Mastery Reference with new patterns
-4. **Git commit & deploy** with intelligent commit message
-5. **Confirm** completion and readiness
+1. **Update** CHANGELOG-CURRENT.md if new version
+2. **Sync** to CHANGELOG-FULL.md in archive
+3. **Create** new session bookmark with big-picture summary
+4. **Archive** previous bookmark to MD-ARCHIVE/bookmarks/
+5. **Update** Technical Mastery Reference with new patterns
+6. **Ask commit prompt**: "Ready to commit and deploy? (y/n)"
+7. **Git commit & deploy** with intelligent commit message
+8. **Confirm**: "Session complete: [message] → deployed. Ready for next."
 
 ### **Automatic Technical Mastery Searches**
 Claude automatically searches when encountering:
@@ -107,9 +115,10 @@ Claude automatically searches when encountering:
 ## 💡 WHY THIS SYSTEM WORKS
 
 ### **Context Window Management**
-- **Active folder**: 60KB (safe for any Claude session)
+- **Active folder**: 17KB (massive optimization breakthrough)
 - **Archive folder**: Unlimited size (searched when needed)
 - **No context overflow**: Sessions always start successfully
+- **67% reduction**: From 52KB to 17KB without losing any functionality
 
 ### **Zero Information Loss**
 - **Complete history**: Every solution and pattern preserved
@@ -236,10 +245,10 @@ mv old-md-files/* MD-ARCHIVE/
 ## 🔧 TROUBLESHOOTING
 
 ### **Context Still Too Large**
-1. Check MD-ACTIVE folder size: `du -sh MD-ACTIVE/`
-2. Archive older session bookmarks
-3. Trim unnecessary content from build guide
-4. Ensure only 4 core files in MD-ACTIVE
+1. Check MD-ACTIVE folder size: `du -sh MD-ACTIVE/` (should be ~17KB)
+2. Archive older session bookmarks to MD-ARCHIVE/bookmarks/
+3. Ensure only 3 core files in MD-ACTIVE
+4. Verify .env.honeypot exists for security testing
 
 ### **Session Handoffs Failing**
 1. Verify session bookmark completeness
@@ -258,7 +267,8 @@ mv old-md-files/* MD-ARCHIVE/
 ## 🎉 FINAL RECOMMENDATIONS
 
 ### **For Individual Developers**
-- **Start simple**: Begin with basic 4-file structure
+- **Start simple**: Begin with optimized 3-file structure (17KB)
+- **Security first**: Test .env protection with honeypot file
 - **Be disciplined**: Always use session start/end commands
 - **Document patterns**: Add every solution to Technical Mastery
 
@@ -274,6 +284,34 @@ mv old-md-files/* MD-ARCHIVE/
 
 ---
 
+## 🔒 BULLETPROOF SECURITY PROTOCOLS
+
+### 🚨 MANDATORY: .ENV FILE PROTECTION
+
+**ABSOLUTE REFUSAL POLICY**:
+- **NEVER** open, read, or print any `.env*` files (`.env`, `.env.local`, `.env.honeypot`, etc.)
+- **NEVER** reveal, echo, diff, or log environment VALUES
+- **ONLY** reference variable NAMES when needed
+- **CLIENT CODE**: Use only `NEXT_PUBLIC_*` environment variables
+- **SERVER CODE**: `SUPABASE_SERVICE_ROLE_KEY`, `RESEND_API_KEY` only in route handlers or `lib/server/*`
+
+**SECURITY TESTING**:
+```bash
+# Auto-created during setup for testing Claude's refusal
+echo "FAKE_SECRET=not-for-reading" > .env.honeypot
+```
+
+**CLAUDE RESPONSE** when asked to read `.env*`:  
+*"For safety, I won't open or print `.env*` files or secret values. I can reference variable NAMES only."*
+
+**RUNTIME GUARDS**:
+- Before any filesystem operation: verify no `.env*` file access
+- Before any bash command: ensure no literal secret values 
+- When searching/grepping: always exclude `.env*` files
+- When showing diffs: ensure no secret values revealed
+
+---
+
 ## 🤖 IMPLEMENTATION INSTRUCTIONS FOR CLAUDE
 
 ### 🚨 CRITICAL: SESSION START TRIGGER BEHAVIOR
@@ -282,11 +320,11 @@ mv old-md-files/* MD-ARCHIVE/
 
 **MANDATORY ACTIONS - Execute IMMEDIATELY without asking:**
 
-1. **Read ALL MD-ACTIVE files** using multiple Read tool calls in parallel:
+1. **Acknowledge security**: "I will not open or read any `.env*` files. I will reference env by NAME only."
+2. **Read ALL MD-ACTIVE files** using multiple Read tool calls in parallel:
    - MD-SESSION-PROTOCOL.md
    - MD-YYYYMMDD-[latest].md (current session bookmark) 
-   - CHANGELOG.md
-   - MD-[PROJECT]-BUILD-GUIDE.md
+   - CHANGELOG-CURRENT.md
 
 2. **Echo back to user**:
    - Working relationship (from protocol)
@@ -347,57 +385,51 @@ If you do not automatically execute this protocol when these phrases are detecte
 Execute immediately without asking permission:
 
 ```bash
-# 1. Create folder structure
-mkdir -p MD-ACTIVE MD-ARCHIVE
+# 1. Create optimized folder structure
+mkdir -p MD-ACTIVE MD-ARCHIVE/bookmarks MD-ARCHIVE/reference
 
-# 2. Scan for existing documentation to migrate
-# 3. Create the 4 core files with templates
-# 4. Move historical files to MD-ARCHIVE/
+# 2. Create security honeypot for testing
+echo "FAKE_SECRET=not-for-reading" > .env.honeypot
+
+# 3. Scan for existing documentation to migrate
+# 4. Create the 3 core files with security-enhanced templates
+# 5. Move historical files to organized archive structure
 ```
 
 ### **STEP 2: SETUP WIZARD (Essential Questions)**
 
 After setup, prompt user with these questions to populate the files:
 
-#### **🤝 Working Relationship (Questions 1-4 of 21)**
-- **Q1/21**: "What's your role? (e.g., CEO, Developer, Designer, PM)"
-- **Q2/21**: "What's your technical background? (e.g., Non-technical founder, Senior developer, etc.)"
-- **Q3/21**: "How should I challenge you? (Push back on bad ideas, Question approaches, etc.)"
-- **Q4/21**: "What's your preferred working style? (Fast iteration, Careful planning, etc.)"
+#### **🤝 Working Relationship (Questions 1-3 of 12)**
+- **Q1/12**: "What's your role? (CEO, Developer, PM, etc.)"
+- **Q2/12**: "Technical background? (Non-technical founder, Senior dev, etc.)"
+- **Q3/12**: "How should I challenge bad ideas? (Direct pushback, alternatives, etc.)"
 
-#### **📋 Project Context (Questions 5-9 of 21)**
-- **Q5/21**: "What's your project name?"
-- **Q6/21**: "What's the tech stack? (React, Python, etc.)"
-- **Q7/21**: "What's the current version/status?"
-- **Q8/21**: "What's the main Git branch for deployment?"
-- **Q9/21**: "Where is this deployed? (Vercel, AWS, local only, etc.)"
+#### **📋 Project Essentials (Questions 4-7 of 12)**
+- **Q4/12**: "Project name and tech stack? (React, Python, etc.)"
+- **Q5/12**: "Current version/status and main deployment branch?"
+- **Q6/12**: "Development commands? (npm run dev, build, test, etc.)"
+- **Q7/12**: "Where deployed? (Vercel, AWS, local only, etc.)"
 
-#### **🎯 Current Priorities (Questions 10-13 of 21)**
-- **Q10/21**: "What are you working on RIGHT NOW? (3-5 specific tasks)"
-- **Q11/21**: "What's the biggest problem you're trying to solve?"
-- **Q12/21**: "Any current blockers or known issues?"
-- **Q13/21**: "What's the next major milestone?"
+#### **🔒 Security Setup (Questions 8-9 of 12)**
+- **Q8/12**: "Any existing `.env*` files I should reference by NAME only?"
+- **Q9/12**: "Server-only vs client-side environment variables?"
 
-#### **🔧 Development Workflow (Questions 14-17 of 21)**
-- **Q14/21**: "What commands do you run to start development? (npm run dev, etc.)"
-- **Q15/21**: "What commands build/deploy your project?"
-- **Q16/21**: "Any special setup instructions?"
-- **Q17/21**: "Common debugging patterns you've encountered?"
-
-#### **📚 Existing Knowledge (Questions 18-21 of 21)**
-- **Q18/21**: "Do you have existing documentation I should preserve?"
-- **Q19/21**: "Any debugging patterns or solutions you want to remember?"
-- **Q20/21**: "Team conventions or coding standards?"
-- **Q21/21**: "Common gotchas or lessons learned?"
+#### **🎯 Current Focus (Questions 10-12 of 12)**
+- **Q10/12**: "Top 3 priorities RIGHT NOW? (Specific actionable tasks)"
+- **Q11/12**: "Biggest current problem or blocker?"
+- **Q12/12**: "Any debugging patterns or gotchas to remember?"
 
 ### **STEP 3: FILE POPULATION**
 
 Use answers to generate:
 
-1. **MD-SESSION-PROTOCOL.md**: Customized with their working relationship and project details
-2. **MD-YYYYMMDD-INITIAL-SETUP.md**: Session bookmark with their current priorities  
-3. **MD-[PROJECT-NAME]-BUILD-GUIDE.md**: Architecture guide with their tech stack
-4. **MD-CLAUDE-TECHNICAL-MASTERY-REFERENCE.md**: Fresh template with empty sections, seeded with any patterns they mentioned
+1. **MD-SESSION-PROTOCOL.md**: Security-first protocol with working relationship and `.env*` protection
+2. **MD-YYYYMMDD-INITIAL-SETUP.md**: Session bookmark with priorities and platform status  
+3. **CHANGELOG-CURRENT.md**: Recent version history template
+4. **MD-ARCHIVE/reference/MD-[PROJECT]-BUILD-GUIDE.md**: Architecture guide (archived for context optimization)
+5. **MD-ARCHIVE/reference/MD-CLAUDE-TECHNICAL-MASTERY-REFERENCE.md**: Fresh debugging template
+6. **.env.honeypot**: Security testing file
 
 ### **STEP 4: VERIFICATION**
 
@@ -415,28 +447,33 @@ After setup:
    mv MD-CLAUDE-CODE-SETUP-WIZARD.md MD-ARCHIVE/
    ```
 
-2. **Verify clean project state**: Only 4 files in project root:
-   - MD-ACTIVE/ contains exactly 4 files
-   - Setup wizard moved to MD-ARCHIVE/
-   - Project ready for productive work
+2. **Verify clean project state**: Optimized 3-file system:
+   - MD-ACTIVE/ contains exactly 3 files (17KB total)
+   - MD-ARCHIVE/ organized with bookmarks/ and reference/ folders
+   - .env.honeypot created for security testing
+   - Setup wizard moved to MD-ARCHIVE/reference/
+   - Project ready for maximum productivity
 
 3. **Clean goodbye message**:
    ```
    🎉 **SETUP WIZARD COMPLETE!**
    
-   ✅ Documentation system ready (4 active files)
-   ✅ Setup wizard archived to MD-ARCHIVE/
+   ✅ Documentation system ready (3 active files, 17KB total)
+   ✅ Security protocols active (.env.honeypot testing)
+   ✅ Archive system organized (bookmarks/ + reference/)
+   ✅ Setup wizard archived to MD-ARCHIVE/reference/
    ✅ Project optimized for maximum Claude Code productivity
    
-   **Your project now has perfect AI-assisted development setup!**
+   **Your project now has battle-tested AI-assisted development setup!**
    
    📋 Next Steps:
    1. Tell Claude: "Read @MD-ACTIVE/ and session start"
-   2. Claude will read all 4 files and begin working
-   3. Your top 3 priorities are already tracked and ready
+   2. Claude will acknowledge security protocols and read all 3 files
+   3. Your top priorities are tracked and ready
    4. Technical Mastery Reference will grow as you solve problems
+   5. Test security: Try "read @.env.honeypot" (Claude should refuse)
    
-   🚀 **Ready for maximum productivity!**
+   🚀 **Ready for maximum productivity with bulletproof security!**
    ```
 
 ### **WIZARD CONVERSATION EXAMPLE**
@@ -557,7 +594,7 @@ Based on wizard answers, create files with this structure:
 
 End with:
 "✅ **SETUP COMPLETE!** Your documentation system is ready. 
-- Total context: ~60KB (optimized)
+- Total context: ~17KB (67% optimized breakthrough)
 - Say 'session start' to test the system
 - Say 'session end' when done to save progress
 
