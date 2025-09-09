@@ -1,4 +1,5 @@
 ## As used for my app [Scribefully!](https://scribefully.com)
+Scribefully is a place for experts to create a beautiful portfolio of their best work -- articles, videos, code, podcasts, etc -- and share it in a Reddit-inspired community.
 
 ## Features
 
