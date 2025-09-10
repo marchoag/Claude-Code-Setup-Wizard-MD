@@ -11,16 +11,21 @@ Scribefully is a place for experts to create a beautiful portfolio of their best
 
   ## Quick Start
 
-  1. Download [MD-CLAUDE-CODE-SETUP-WIZARD.md](https://raw.githubusercontent.com/marchoag/Claude-Code-Setup-Wizard-MD/main/MD-CLAUDE-CODE-SETUP-WIZARD.md)
-  2. Tell Claude: `"Run @md-claude-code-setup-wizard.md"`
-  3. Answer 21 setup questions
-  4. Start working: `"read @MD-ACTIVE/"` then `"session start"`
+  1. Install Claude code using `npm install -g @anthropic-ai/claude-code`
+  2. Intialize as always with `/init`
+  3. Download [MD-CLAUDE-CODE-SETUP-WIZARD.md](https://raw.githubusercontent.com/marchoag/Claude-Code-Setup-Wizard-MD/main/MD-CLAUDE-CODE-SETUP-WIZARD.md)
+  4. Tell Claude: `"Run @md-claude-code-setup-wizard.md"`
+  5. Answer 21 setup questions
+  6. Start working: `"read @MD-ACTIVE/"` then `"session start"`
 
-  ## Usage
+  ## Usage & Best Practices after installation is complete
 
-  **Session start**: `"read @MD-ACTIVE/"` then `"session start"`
+  **Session start**: `"read @MD-ACTIVE/ then initiate session start protocols per @MD-SESSION-PROTOCOL.md`
+  ⚠️ Confirm:
+  - Did it explicitly echo back the security instructions re: .envs and other secrets? If not, ask it to do so.
+  - You may need to manually fetch/pull the latest version to update your local reop.
   
-  **Session end**: `"session end"`
+  **Session end**: `initiate session end protocols per @MD-SESSION-PROTOCOL.md`
 
   ## What happens
 
