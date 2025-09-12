@@ -1,4 +1,22 @@
 ## An MD file that functions as a Claude Code setup wizard to start new projects
+
+### 🚀 Quick Start: Session Management Only
+
+If you **only** want session management protocols to help start and end Claude Code sessions (when context windows get full), grab this lightweight file:
+
+**[Download MD-SESSION-PROTOCOLS-ONLY.md](https://raw.githubusercontent.com/marchoag/Claude-Code-Setup-Wizard-MD/main/MD-SESSION-PROTOCOLS-ONLY.md)**
+
+This standalone file provides:
+- Clean session start/end commands
+- Security protocols for handling environment variables
+- Basic development workflows
+- No folder creation or setup wizard
+
+Perfect for teams that just want better session handoffs without the full setup system.
+
+---
+
+### 📚 Full Setup Wizard (Complete System)
 **⚠️ DISCLAIMER**
 
   **USE AT YOUR OWN RISK** - This project is provided "AS IS" without warranty of
