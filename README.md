@@ -4,30 +4,20 @@
 
 ## Choose Your Setup
 
-### 🚀 Option 1: Session Protocols Only (Lightweight)
+| 🚀 **Protocols Only**<br>*Lightweight* | 📊 **Protocols + Timer**<br>*Medium* | 📚 **Full Setup Wizard**<br>*Complete* |
+|---|---|---|
+| **[Download MD-SESSION-PROTOCOLS-ONLY.md](https://raw.githubusercontent.com/marchoag/Claude-Code-Setup-Wizard-MD/main/MD-SESSION-PROTOCOLS-ONLY.md)** | **[Download MD-SESSION-PROTOCOLS-TIMER.zip](https://raw.githubusercontent.com/marchoag/Claude-Code-Setup-Wizard-MD/main/MD-SESSION-PROTOCOLS-TIMER.zip)** | **[Download MD-CLAUDE-CODE-SETUP-WIZARD.md](https://raw.githubusercontent.com/marchoag/Claude-Code-Setup-Wizard-MD/main/MD-CLAUDE-CODE-SETUP-WIZARD.md)** |
+| ✅ Session start/end commands | ✅ Everything from Protocols Only | ✅ Everything from Timer Bundle |
+| ✅ Security protocols | ✅ Session timing & analytics | ✅ 21-question interactive setup |
+| ✅ Environment variable safety | ✅ Pre-push git hooks (`npm run ci`) | ✅ Automated folder creation |
+| ✅ Basic dev workflows | ✅ Ready-to-use folder structure | ✅ Technical mastery archive |
+| ✅ Works with Claude Code & Codex | ✅ No-dependency timer script | ✅ Searchable knowledge base |
+| | ✅ Cumulative session analytics | ✅ Perfect session handoffs |
+| **Best for:** Quick session management | **Best for:** Teams wanting analytics | **Best for:** Complete AI development setup |
 
-Just session start/end commands and security protocols:
+---
 
-**[Download MD-SESSION-PROTOCOLS-ONLY.md](https://raw.githubusercontent.com/marchoag/Claude-Code-Setup-Wizard-MD/main/MD-SESSION-PROTOCOLS-ONLY.md)**
-
-- Clean session start/end commands
-- Security protocols for environment variables  
-- Basic development workflows
-- Works with both Claude Code and Codex CLI
-
-### 📊 Option 2: Protocols + Timer Bundle (Medium)
-
-Session protocols + timing analytics + git automation:
-
-**[Download MD-SESSION-PROTOCOLS-TIMER.zip](https://raw.githubusercontent.com/marchoag/Claude-Code-Setup-Wizard-MD/main/MD-SESSION-PROTOCOLS-TIMER.zip)**
-
-- Everything from Option 1
-- Session timing and analytics
-- Pre-push git hooks for `npm run ci`
-- Ready-to-use folder structure
-- No-dependency timer script
-
-### 📚 Option 3: Full Setup Wizard (Complete System)
+## Full Setup Wizard Details
 
 ## As used to build [Scribefully!](https://scribefully.com)
 Scribefully is a place for experts to create a beautiful portfolio of their best work -- articles, videos, code, podcasts, etc -- and share it in a Reddit-inspired community of other experts, thought leaders, academics, professionals, and creators.
