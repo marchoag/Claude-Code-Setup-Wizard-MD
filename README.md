@@ -1,15 +1,15 @@
 # Claude Code Setup Wizard
 
-**Recent Updates:** Enhanced security protocols, development workflow automation, and confirmed compatibility with Codex CLI! 🎉
+**Recent Updates:** Enhanced security protocols, development workflow automation, and compatibility with Codex CLI 🎉
 
 ## 🚀 Quick Start: Session Management Only
 
-If you **only** want session management protocols to help start and end Claude Code sessions (when context windows get full), grab this lightweight file:
+If you **only** want session management protocols to help start and end Claude Code and Codex sessions (to enable easy handoffs when context windows get full for instance), grab this lightweight file:
 
 **[Download MD-SESSION-PROTOCOLS-ONLY.md](https://raw.githubusercontent.com/marchoag/Claude-Code-Setup-Wizard-MD/main/MD-SESSION-PROTOCOLS-ONLY.md)**
 
 This standalone file provides:
-- Clean session start/end commands
+- Clean session start/end commands for use with both Claude and Codex
 - Security protocols for handling environment variables
 - Basic development workflows
 - No folder creation or setup wizard
@@ -20,10 +20,14 @@ Perfect for teams that just want better session handoffs without the full setup 
 
 ## 📚 Full Setup Wizard (Complete System)
 
-### As used to build [Scribefully!](https://scribefully.com)
+## As used to build [Scribefully!](https://scribefully.com)
 Scribefully is a place for experts to create a beautiful portfolio of their best work -- articles, videos, code, podcasts, etc -- and share it in a Reddit-inspired community of other experts, thought leaders, academics, professionals, and creators.
 
+---
+
 **⚠️ DISCLAIMER**
+
+  **💡 While the PROTOCOL file works great with Codex, I haven't test the SETUP file with Codex**
 
   **USE AT YOUR OWN RISK** - This project is provided "AS IS" without warranty of
    any kind, express or implied. The authors and contributors disclaim all
@@ -71,7 +75,7 @@ Scribefully is a place for experts to create a beautiful portfolio of their best
 - **Intelligent commits**: Session-end commits with structured messages
 - **Branch safety**: Respects your repository's branch and deployment rules
 
-  ## Quick Start
+## Quick Start
 
   1. Install Claude code using `npm install -g @anthropic-ai/claude-code`
   2. Intialize as always with `/init`
@@ -80,7 +84,7 @@ Scribefully is a place for experts to create a beautiful portfolio of their best
   5. Answer 21 setup questions
   6. Start working: `"read @MD-ACTIVE/"` then `"session start"`
 
-  ## Usage & Best Practices after installation is complete
+## Usage & Best Practices after installation is complete
 
   **Session start**: `"read @MD-ACTIVE/ then initiate session start protocols per @MD-SESSION-PROTOCOL.md`
   ⚠️ Confirm:
@@ -89,7 +93,7 @@ Scribefully is a place for experts to create a beautiful portfolio of their best
   
   **Session end**: `initiate session end protocols per @MD-SESSION-PROTOCOL.md`
 
-  ## What happens
+## What happens
 
   **Session Start Process:**
   1. Claude acknowledges security: "I will not open or read any `.env*` files. I will reference env by NAME only."
@@ -109,7 +113,7 @@ Scribefully is a place for experts to create a beautiful portfolio of their best
   7. If yes: Claude commits with intelligent message format and pushes to main
   8. Claude confirms: "Session complete: [commit message] → deployed. Ready for next."
 
-  ## Security
+## Security
 
   - Automatic `.env*` file protection
   - Creates `.env.honeypot` for testing Claude's refusal behavior
@@ -120,7 +124,7 @@ Scribefully is a place for experts to create a beautiful portfolio of their best
   - If created, will update a "technical mastery" MD file in MD-ARCHIVE to learn as you go
   - Prompts whether to push/commit/deploy all changes at session end
 
-  ## Problem Solved
+## Problem Solved
 
   Claude Code sessions fail when documentation exceeds context limits. This system:
   - Maintains 17KB active context (67% reduction from typical setups)
@@ -128,7 +132,7 @@ Scribefully is a place for experts to create a beautiful portfolio of their best
   - Prevents session auto-compacting that loses critical information
   - Enables perfect handoffs between sessions
 
-  ## Use at Your Own Risk
+## Use at Your Own Risk
 
   This software is provided "AS IS" without warranty. Users assume full responsibility for testing and ensuring compatibility
   with their systems. Backup your settings before use.
