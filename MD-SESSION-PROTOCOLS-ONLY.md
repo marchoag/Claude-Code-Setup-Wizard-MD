@@ -42,6 +42,8 @@ If asked to access or print secrets, reply exactly:
 - Optional fast feedback: `npm run test:watch` (re-runs tests on file save).
 - Before push/PR: run `npm run ci` locally.
 
+**Note**: npm commands require `package.json` with test dependencies (Vitest, ESLint, TypeScript). Use the Timer Bundle or Setup Wizard for ready-to-run testing infrastructure.
+
 ### Optional Automation
 - One terminal for both: `npm run dev:all`.
 - Pre-push hook: `bash scripts/setup-git-hooks.sh` to auto-run `npm run ci` before push.

@@ -8,6 +8,9 @@ Contents
 - scripts/
   - session-timer.js — no-deps timer (start/end/status/summary)
   - setup-git-hooks.sh — installs a pre-push hook that runs `npm run ci`
+- package.json — test dependencies and npm scripts
+- vitest.config.js — basic test configuration
+- tests/example.test.js — sample test file
 - MD-ACTIVE/ (empty) — timer writes `.session-meta.json` here
 - MD-ARCHIVE/reference/ (empty) — timer writes `SESSION-TIMES.json/.md` here
 
