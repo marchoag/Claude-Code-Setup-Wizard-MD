@@ -88,6 +88,7 @@ Optimized: August 28, 2025
 6. **Create TodoWrite** list from bookmark priorities
 7. **Auto-activate** Technical Mastery Reference (ready to search)
 8. **Begin work** on first task
+9. **(Optional) Start Timer**: `node scripts/session-timer.js start`
 
 ### **Session End (User says "session end")**
 1. **Update** CHANGELOG-CURRENT.md if new version
@@ -95,9 +96,11 @@ Optimized: August 28, 2025
 3. **Create** new session bookmark with big-picture summary
 4. **Archive** previous bookmark to MD-ARCHIVE/bookmarks/
 5. **Update** Technical Mastery Reference with new patterns
-6. **Ask commit prompt**: "Ready to commit and deploy? (y/n)"
-7. **Git commit & deploy** with intelligent commit message
-8. **Confirm**: "Session complete: [message] → deployed. Ready for next."
+6. **Run Local CI**: `npm run ci` and fix issues if needed
+7. **(Optional) End Timer**: `node scripts/session-timer.js end` — auto-logs cumulative totals
+8. **Ask commit prompt**: "Ready to commit and deploy? (y/n)"
+9. **Git commit & deploy** with intelligent commit message
+10. **Confirm**: "Session complete: [message] → deployed. Ready for next."
 
 ### **Automatic Technical Mastery Searches**
 Claude automatically searches when encountering:
@@ -136,6 +139,25 @@ Claude automatically searches when encountering:
 - **Flexible content**: Works with any project type
 
 ---
+
+## ⏱ Session Timing & Totals (Optional)
+
+Add time tracking for sessions to inform changelog and bookmarks.
+
+Commands
+- Start: `node scripts/session-timer.js start`
+- End: `node scripts/session-timer.js end`
+- Status: `node scripts/session-timer.js status`
+- Summary: `node scripts/session-timer.js summary`
+
+Outputs
+- Per-session meta: `MD-ACTIVE/.session-meta.json`
+- Cumulative log: `MD-ARCHIVE/reference/SESSION-TIMES.json`
+- Human summary: `MD-ARCHIVE/reference/SESSION-TIMES.md` (totals + recent sessions)
+
+Integrations
+- Include “Session Duration” in new bookmarks and in the current changelog entry.
+- Keep a “Cumulative Engineering Time” block at the top of `CHANGELOG-CURRENT.md`.
 
 ## 🚀 IMPLEMENTATION GUIDE
 

@@ -1,24 +1,33 @@
 # Claude Code Setup Wizard
 
-**Recent Updates:** Enhanced security protocols, development workflow automation, and compatibility with Codex CLI 🎉
+**Recent Updates:** Enhanced security protocols, development workflow automation, timing analytics, and compatibility with Codex CLI 🎉
 
-## 🚀 Quick Start: Session Management Only
+## Choose Your Setup
 
-If you **only** want session management protocols to help start and end Claude Code and Codex sessions (to enable easy handoffs when context windows get full for instance), grab this lightweight file:
+### 🚀 Option 1: Session Protocols Only (Lightweight)
+
+Just session start/end commands and security protocols:
 
 **[Download MD-SESSION-PROTOCOLS-ONLY.md](https://raw.githubusercontent.com/marchoag/Claude-Code-Setup-Wizard-MD/main/MD-SESSION-PROTOCOLS-ONLY.md)**
 
-This standalone file provides:
-- Clean session start/end commands for use with both Claude and Codex
-- Security protocols for handling environment variables
+- Clean session start/end commands
+- Security protocols for environment variables  
 - Basic development workflows
-- No folder creation or setup wizard
+- Works with both Claude Code and Codex CLI
 
-Perfect for teams that just want better session handoffs without the full setup system.
+### 📊 Option 2: Protocols + Timer Bundle (Medium)
 
----
+Session protocols + timing analytics + git automation:
 
-## 📚 Full Setup Wizard (Complete System)
+**[Download MD-SESSION-PROTOCOLS-TIMER.zip](https://raw.githubusercontent.com/marchoag/Claude-Code-Setup-Wizard-MD/main/MD-SESSION-PROTOCOLS-TIMER.zip)**
+
+- Everything from Option 1
+- Session timing and analytics
+- Pre-push git hooks for `npm run ci`
+- Ready-to-use folder structure
+- No-dependency timer script
+
+### 📚 Option 3: Full Setup Wizard (Complete System)
 
 ## As used to build [Scribefully!](https://scribefully.com)
 Scribefully is a place for experts to create a beautiful portfolio of their best work -- articles, videos, code, podcasts, etc -- and share it in a Reddit-inspired community of other experts, thought leaders, academics, professionals, and creators.
@@ -75,7 +84,27 @@ Scribefully is a place for experts to create a beautiful portfolio of their best
 - **Intelligent commits**: Session-end commits with structured messages
 - **Branch safety**: Respects your repository's branch and deployment rules
 
-## Quick Start
+## 📊 Session Timing & Analytics (Option 2 Bundle)
+
+Track development time across Claude sessions with built-in analytics:
+
+### Timer Commands (Run from repo root)
+- **Start**: `node scripts/session-timer.js start`
+- **End**: `node scripts/session-timer.js end` 
+- **Status**: `node scripts/session-timer.js status`
+- **Summary**: `node scripts/session-timer.js summary`
+
+### Outputs
+- **Per-session meta**: `MD-ACTIVE/.session-meta.json`
+- **Cumulative log**: `MD-ARCHIVE/reference/SESSION-TIMES.json`
+- **Human summary**: `MD-ARCHIVE/reference/SESSION-TIMES.md`
+
+### Integration
+- Session durations automatically added to bookmarks and changelogs
+- No external dependencies - pure Node.js
+- Works with both local development and CI/CD workflows
+
+## Quick Start (Full Setup Wizard)
 
   1. Install Claude code using `npm install -g @anthropic-ai/claude-code`
   2. Intialize as always with `/init`

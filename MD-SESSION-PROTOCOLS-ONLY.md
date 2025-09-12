@@ -46,6 +46,17 @@ If asked to access or print secrets, reply exactly:
 - One terminal for both: `npm run dev:all`.
 - Pre-push hook: `bash scripts/setup-git-hooks.sh` to auto-run `npm run ci` before push.
 
+## Session Timing (Optional, Share-Safe)
+- Start timer at session start: `node scripts/session-timer.js start`
+- End timer at session end: `node scripts/session-timer.js end`
+- See status anytime: `node scripts/session-timer.js status`
+- Rebuild summary: `node scripts/session-timer.js summary`
+
+Outputs
+- Per-session meta: `MD-ACTIVE/.session-meta.json`
+- Cumulative log: `MD-ARCHIVE/reference/SESSION-TIMES.json`
+- Human summary: `MD-ARCHIVE/reference/SESSION-TIMES.md` (totals + recent sessions)
+
 ## Session Start — ACK (must be stated)
 “I will not open or read any `.env*` files. I will reference env by NAME only. Client uses `NEXT_PUBLIC_*` only. Server-only: `SUPABASE_SERVICE_ROLE_KEY`, `RESEND_API_KEY`.”
 
@@ -61,11 +72,12 @@ On “Session end”:
 4. Archive the previous bookmark to `MD-ARCHIVE/bookmarks/`.
 5. Update the Technical Reference with any new patterns.
 6. Run Local CI: `npm run ci`. Fix issues before proceeding.
-7. Ask: “Ready to commit and push these changes? (y/n)”
-8. If yes:
+7. (If using timer) capture session end and duration: `node scripts/session-timer.js end`
+8. Ask: “Ready to commit and push these changes? (y/n)”
+9. If yes:
    - Commit message style: `✅ [Feature]: short user-facing description`
    - Push according to your repo’s branch/deploy rules.
-9. Confirm: “Session complete: [commit message] → pushed. Ready for next session.”
+10. Confirm: “Session complete: [commit message] → pushed. Ready for next session.”
 
 ## Technical Reference (When to Consult)
 - Search on triggers like: authentication issues, DB errors, modal conflicts, infinite loops, build/deploy failures, unexpected API responses.
