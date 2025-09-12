@@ -1,4 +1,6 @@
-## An MD file that functions as a Claude Code setup wizard to start new projects
+# An MD file that functions as a Claude Code setup wizard to start new projects
+
+## Edit: Looks like these work pretty great with Codex CLI too! 🎉
 
 ### 🚀 Quick Start: Session Management Only
 
