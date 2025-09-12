@@ -1,8 +1,8 @@
-# An MD file that functions as a Claude Code setup wizard to start new projects
+# Claude Code Setup Wizard
 
-## Edit: Looks like these work pretty great with Codex CLI too! 🎉
+**Recent Updates:** Enhanced security protocols, development workflow automation, and confirmed compatibility with Codex CLI! 🎉
 
-### 🚀 Quick Start: Session Management Only
+## 🚀 Quick Start: Session Management Only
 
 If you **only** want session management protocols to help start and end Claude Code sessions (when context windows get full), grab this lightweight file:
 
@@ -18,9 +18,9 @@ Perfect for teams that just want better session handoffs without the full setup 
 
 ---
 
-### 📚 Full Setup Wizard (Complete System)
+## 📚 Full Setup Wizard (Complete System)
 
-## As used to build [Scribefully!](https://scribefully.com)
+### As used to build [Scribefully!](https://scribefully.com)
 Scribefully is a place for experts to create a beautiful portfolio of their best work -- articles, videos, code, podcasts, etc -- and share it in a Reddit-inspired community of other experts, thought leaders, academics, professionals, and creators.
 
 **⚠️ DISCLAIMER**
@@ -50,6 +50,26 @@ Scribefully is a place for experts to create a beautiful portfolio of their best
   - **Session automation** - automated start/end protocols with perfect handoffs
   - **Searchable archive** - unlimited knowledge preservation without context impact
   - **Interactive setup** - 21-question wizard customizes system for your project
+
+## Security & Development Workflows
+
+### Built-in Security Protocols
+- **Environment Protection**: Automatic `.env*` file protection with refusal to read secret files
+- **Honeypot Testing**: Creates `.env.honeypot` to test Claude's security behavior
+- **Variable Safety**: Server-only variables (`SUPABASE_SERVICE_ROLE_KEY`, `RESEND_API_KEY`) stay server-side
+- **Client Restrictions**: Only `NEXT_PUBLIC_*` environment variables allowed in client code
+- **Runtime Guards**: Prevents accidental secret exposure in diffs, logs, or shell commands
+
+### Development Commands
+- **`npm run dev`** - Start development server with hot reloads
+- **`npm run test:watch`** - Optional fast feedback with test re-runs on file changes
+- **`npm run ci`** - Run full CI checks locally before push/PR
+- **`npm run dev:all`** - Run both dev server and tests simultaneously
+
+### Automation & Git Hooks
+- **Pre-push automation**: `bash scripts/setup-git-hooks.sh` auto-runs `npm run ci` before push
+- **Intelligent commits**: Session-end commits with structured messages
+- **Branch safety**: Respects your repository's branch and deployment rules
 
   ## Quick Start
 
