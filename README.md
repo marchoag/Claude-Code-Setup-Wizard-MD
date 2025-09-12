@@ -4,7 +4,7 @@
 
 ## Choose Your Setup
 
-| 🚀 **Protocols Only**<br>*Lightweight* | 📊 **Protocols + Timer**<br>*Medium* | 📚 **Full Setup Wizard**<br>*Complete* |
+| 🚀 **Protocols Only**<br>*Lightweight* | ⏱️ **Protocols + Timer**<br>*Medium* | 📚 **Full Setup Wizard**<br>*Complete* |
 |---|---|---|
 | **[Download MD-SESSION-PROTOCOLS-ONLY.md](https://raw.githubusercontent.com/marchoag/Claude-Code-Setup-Wizard-MD/main/MD-SESSION-PROTOCOLS-ONLY.md)** | **[Download MD-SESSION-PROTOCOLS-TIMER.zip](https://raw.githubusercontent.com/marchoag/Claude-Code-Setup-Wizard-MD/main/MD-SESSION-PROTOCOLS-TIMER.zip)** | **[Download MD-CLAUDE-CODE-SETUP-WIZARD.md](https://raw.githubusercontent.com/marchoag/Claude-Code-Setup-Wizard-MD/main/MD-CLAUDE-CODE-SETUP-WIZARD.md)** |
 | ✅ Session start/end commands | ✅ Everything from Protocols Only | ✅ Everything from Timer Bundle |
@@ -17,10 +17,12 @@
 
 ---
 
-## Full Setup Wizard Details
+## About
 
-## As used to build [Scribefully!](https://scribefully.com)
-Scribefully is a place for experts to create a beautiful portfolio of their best work -- articles, videos, code, podcasts, etc -- and share it in a Reddit-inspired community of other experts, thought leaders, academics, professionals, and creators.
+### As used to build [Scribefully!](https://scribefully.com)
+I came up with this wizard (in its various flavors) to help me build Scribefully (and several other projects I'm working on). Scribefully is a place for experts to create a beautiful portfolio of their best work -- articles, videos, code, podcasts, etc -- and share it in a Reddit-inspired community of other experts, thought leaders, academics, professionals, and creators.
+
+## Full Setup Wizard Details
 
 ---
 
