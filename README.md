@@ -78,7 +78,7 @@ I came up with this wizard (in its various flavors) to help me build Scribefully
 - **Intelligent commits**: Session-end commits with structured messages
 - **Branch safety**: Respects your repository's branch and deployment rules
 
-## 📊 Session Timing & Analytics (Option 2 Bundle)
+## ⏱️ Session Timing & Analytics (Option 2 Bundle)
 
 Track development time across Claude sessions with built-in analytics:
 
