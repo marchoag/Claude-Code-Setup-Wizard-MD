@@ -4,12 +4,69 @@ Marc Hoag | marc@marchoag.com | github.com/marchoag | linkedin.com/in/marchoag |
 **Battle-Tested Documentation System for Maximum AI Productivity**  
 *Includes bulletproof security protocols and 67% context optimization*
 
-Created: August 26, 2025  
-Optimized: August 28, 2025
+Created: August 26, 2025
+Optimized: February 4, 2026
 
 ---
 
 ## 🎬 PURPOSE: Ultra-optimized Claude Code setup using 3 active MD files (17KB total) plus searchable archive system with bulletproof security protocols.
+
+---
+
+## 🔐 GLOBAL SECURITY (One-Time Setup)
+
+**CRITICAL**: Before running this wizard for ANY project, ensure global security is configured. This is done ONCE and protects ALL your projects forever.
+
+### Two-Layer Security Model
+
+| Layer | File | Purpose |
+|-------|------|---------|
+| **Hard Block** | `~/.claude/settings.json` | Tool-level enforcement — Claude literally cannot read denied files |
+| **Soft Block** | `~/.claude/CLAUDE.md` | Instructions Claude reads and understands — can explain refusals |
+
+### First-Time Setup (Run Once Ever)
+
+**1. Create/update `~/.claude/settings.json`:**
+```json
+{
+  "permissions": {
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./**/*.pem)",
+      "Read(./**/*.key)",
+      "Read(./**/credentials.json)",
+      "Read(./**/secrets.json)",
+      "Read(./**/.npmrc)",
+      "Read(./**/.netrc)",
+      "Read(./**/Config.swift)",
+      "Read(./**/Secrets.swift)",
+      "Read(./**/APIKeys.swift)",
+      "Read(./**/*.xcconfig)",
+      "Read(./**/GoogleService-Info.plist)"
+    ]
+  }
+}
+```
+
+**2. Create `~/.claude/CLAUDE.md`:**
+```markdown
+# Global Security Policy
+
+- Never read `.env*` files or any secrets/credentials files
+- Reference environment variables by NAME only, never values
+- If asked to access secrets, suggest alternatives (.env.example, variable names)
+- Never include secret values in code, commits, or output
+```
+
+### Why Both Layers?
+
+- **settings.json**: Even if you forget session protocols, Claude cannot physically read these files
+- **CLAUDE.md**: Claude understands the policy and can explain why it refuses (better UX)
+
+### Subsequent Projects
+
+The wizard will verify global security is in place. If already configured, it confirms and moves on.
 
 ---
 
@@ -18,15 +75,15 @@ Optimized: August 28, 2025
 **MANDATORY STRUCTURE**: Your MD-ACTIVE/ folder must contain EXACTLY these files:
 
 ### **1. MD-SESSION-PROTOCOL.md** (~6KB)
-**Purpose**: Session automation + bulletproof security protocols  
-**Usage**: Read at every session start  
-**Contains**: 
+**Purpose**: Session automation + security acknowledgment
+**Usage**: Read at every session start
+**Contains**:
 - Session start/end commands
-- **CRITICAL**: `.env*` file protection with honeypot testing
+- Security acknowledgment (complements global `~/.claude/settings.json` protection)
 - Working relationship dynamics (CEO/CTO challenge mandate)
 - Technical Mastery Reference auto-triggers
 - Git commit workflows with intelligent messages
-- Mandatory security acknowledgment at session start
+- Project-specific env var guidance
 
 ### **2. MD-YYYYMMDD-[SESSION-NAME].md** (~6KB)
 **Purpose**: Current session bookmark  
@@ -88,7 +145,6 @@ Optimized: August 28, 2025
 6. **Create TodoWrite** list from bookmark priorities
 7. **Auto-activate** Technical Mastery Reference (ready to search)
 8. **Begin work** on first task
-9. **(Optional) Start Timer**: `node scripts/session-timer.js start`
 
 ### **Session End (User says "session end")**
 1. **Update** CHANGELOG-CURRENT.md if new version
@@ -96,11 +152,9 @@ Optimized: August 28, 2025
 3. **Create** new session bookmark with big-picture summary
 4. **Archive** previous bookmark to MD-ARCHIVE/bookmarks/
 5. **Update** Technical Mastery Reference with new patterns
-6. **Run Local CI**: `npm run ci` and fix issues if needed
-7. **(Optional) End Timer**: `node scripts/session-timer.js end` — auto-logs cumulative totals
-8. **Ask commit prompt**: "Ready to commit and deploy? (y/n)"
-9. **Git commit & deploy** with intelligent commit message
-10. **Confirm**: "Session complete: [message] → deployed. Ready for next."
+6. **Ask commit prompt**: "Ready to commit and deploy? (y/n)"
+7. **Git commit & deploy** with intelligent commit message
+8. **Confirm**: "Session complete: [message] → deployed. Ready for next."
 
 ### **Automatic Technical Mastery Searches**
 Claude automatically searches when encountering:
@@ -139,25 +193,6 @@ Claude automatically searches when encountering:
 - **Flexible content**: Works with any project type
 
 ---
-
-## ⏱ Session Timing & Totals (Optional)
-
-Add time tracking for sessions to inform changelog and bookmarks.
-
-Commands
-- Start: `node scripts/session-timer.js start`
-- End: `node scripts/session-timer.js end`
-- Status: `node scripts/session-timer.js status`
-- Summary: `node scripts/session-timer.js summary`
-
-Outputs
-- Per-session meta: `MD-ACTIVE/.session-meta.json`
-- Cumulative log: `MD-ARCHIVE/reference/SESSION-TIMES.json`
-- Human summary: `MD-ARCHIVE/reference/SESSION-TIMES.md` (totals + recent sessions)
-
-Integrations
-- Include “Session Duration” in new bookmarks and in the current changelog entry.
-- Keep a “Cumulative Engineering Time” block at the top of `CHANGELOG-CURRENT.md`.
 
 ## 🚀 IMPLEMENTATION GUIDE
 
@@ -270,7 +305,7 @@ mv old-md-files/* MD-ARCHIVE/
 1. Check MD-ACTIVE folder size: `du -sh MD-ACTIVE/` (should be ~17KB)
 2. Archive older session bookmarks to MD-ARCHIVE/bookmarks/
 3. Ensure only 3 core files in MD-ACTIVE
-4. Verify .env.honeypot exists for security testing
+4. Verify global security is configured (`~/.claude/settings.json`)
 
 ### **Session Handoffs Failing**
 1. Verify session bookmark completeness
@@ -290,7 +325,7 @@ mv old-md-files/* MD-ARCHIVE/
 
 ### **For Individual Developers**
 - **Start simple**: Begin with optimized 3-file structure (17KB)
-- **Security first**: Test .env protection with honeypot file
+- **Security first**: Configure global `~/.claude/settings.json` deny rules (one-time)
 - **Be disciplined**: Always use session start/end commands
 - **Document patterns**: Add every solution to Technical Mastery
 
@@ -308,29 +343,38 @@ mv old-md-files/* MD-ARCHIVE/
 
 ## 🔒 BULLETPROOF SECURITY PROTOCOLS
 
+### Security Hierarchy
+
+**Layer 1: Global Protection (Permanent)**
+- `~/.claude/settings.json` with `permissions.deny` — tool-level hard block
+- `~/.claude/CLAUDE.md` — global instructions Claude reads
+- Set up ONCE, protects ALL projects forever
+- See "🔐 GLOBAL SECURITY" section above for setup
+
+**Layer 2: Session Protocol (Per-Project)**
+- Security acknowledgment at each session start
+- Project-specific env var guidance (which are server-only, etc.)
+- Contextual understanding for this specific codebase
+
 ### 🚨 MANDATORY: .ENV FILE PROTECTION
 
 **ABSOLUTE REFUSAL POLICY**:
-- **NEVER** open, read, or print any `.env*` files (`.env`, `.env.local`, `.env.honeypot`, etc.)
+- **NEVER** open, read, or print any `.env*` files (`.env`, `.env.local`, etc.)
 - **NEVER** reveal, echo, diff, or log environment VALUES
 - **ONLY** reference variable NAMES when needed
 - **CLIENT CODE**: Use only `NEXT_PUBLIC_*` environment variables
 - **SERVER CODE**: `SUPABASE_SERVICE_ROLE_KEY`, `RESEND_API_KEY` only in route handlers or `lib/server/*`
 
-**SECURITY TESTING**:
-```bash
-# Auto-created during setup for testing Claude's refusal
-echo "FAKE_SECRET=not-for-reading" > .env.honeypot
-```
-
-**CLAUDE RESPONSE** when asked to read `.env*`:  
+**CLAUDE RESPONSE** when asked to read `.env*`:
 *"For safety, I won't open or print `.env*` files or secret values. I can reference variable NAMES only."*
 
 **RUNTIME GUARDS**:
 - Before any filesystem operation: verify no `.env*` file access
-- Before any bash command: ensure no literal secret values 
+- Before any bash command: ensure no literal secret values
 - When searching/grepping: always exclude `.env*` files
 - When showing diffs: ensure no secret values revealed
+
+**Note**: With global `settings.json` deny rules in place, Claude physically cannot read these files even if instructed to. The session protocol provides additional context and explanation.
 
 ---
 
@@ -407,16 +451,22 @@ If you do not automatically execute this protocol when these phrases are detecte
 Execute immediately without asking permission:
 
 ```bash
-# 1. Create optimized folder structure
-mkdir -p MD-ACTIVE MD-ARCHIVE/bookmarks MD-ARCHIVE/reference
+# 1. Check global security (one-time setup)
+# If ~/.claude/settings.json lacks permissions.deny → add deny rules
+# If ~/.claude/CLAUDE.md doesn't exist → create with security policy
+# If already configured → confirm "✓ Global security active"
 
-# 2. Create security honeypot for testing
-echo "FAKE_SECRET=not-for-reading" > .env.honeypot
+# 2. Create optimized folder structure
+mkdir -p MD-ACTIVE MD-ARCHIVE/bookmarks MD-ARCHIVE/reference
 
 # 3. Scan for existing documentation to migrate
 # 4. Create the 3 core files with security-enhanced templates
 # 5. Move historical files to organized archive structure
 ```
+
+**Global Security Check Output:**
+- First time ever: "Setting up global security for all your projects..."
+- Already configured: "✓ Global security already active (settings.json + CLAUDE.md)"
 
 ### **STEP 2: SETUP WIZARD (Essential Questions)**
 
@@ -434,8 +484,8 @@ After setup, prompt user with these questions to populate the files:
 - **Q7/12**: "Where deployed? (Vercel, AWS, local only, etc.)"
 
 #### **🔒 Security Setup (Questions 8-9 of 12)**
-- **Q8/12**: "Any existing `.env*` files I should reference by NAME only?"
-- **Q9/12**: "Server-only vs client-side environment variables?"
+- **Q8/12**: "Global protection is already active. For this project, which env vars are server-only vs client-side?"
+- **Q9/12**: "Any project-specific secrets patterns I should know about? (e.g., Config.swift for iOS)"
 
 #### **🎯 Current Focus (Questions 10-12 of 12)**
 - **Q10/12**: "Top 3 priorities RIGHT NOW? (Specific actionable tasks)"
@@ -447,11 +497,12 @@ After setup, prompt user with these questions to populate the files:
 Use answers to generate:
 
 1. **MD-SESSION-PROTOCOL.md**: Security-first protocol with working relationship and `.env*` protection
-2. **MD-YYYYMMDD-INITIAL-SETUP.md**: Session bookmark with priorities and platform status  
+2. **MD-YYYYMMDD-INITIAL-SETUP.md**: Session bookmark with priorities and platform status
 3. **CHANGELOG-CURRENT.md**: Recent version history template
 4. **MD-ARCHIVE/reference/MD-[PROJECT]-BUILD-GUIDE.md**: Architecture guide (archived for context optimization)
 5. **MD-ARCHIVE/reference/MD-CLAUDE-TECHNICAL-MASTERY-REFERENCE.md**: Fresh debugging template
-6. **.env.honeypot**: Security testing file
+
+*(Global security files `~/.claude/settings.json` and `~/.claude/CLAUDE.md` are created/verified in Step 1)*
 
 ### **STEP 4: VERIFICATION**
 
@@ -470,31 +521,33 @@ After setup:
    ```
 
 2. **Verify clean project state**: Optimized 3-file system:
+   - Global security configured (`~/.claude/settings.json` + `~/.claude/CLAUDE.md`)
    - MD-ACTIVE/ contains exactly 3 files (17KB total)
    - MD-ARCHIVE/ organized with bookmarks/ and reference/ folders
-   - .env.honeypot created for security testing
    - Setup wizard moved to MD-ARCHIVE/reference/
    - Project ready for maximum productivity
 
 3. **Clean goodbye message**:
    ```
    🎉 **SETUP WIZARD COMPLETE!**
-   
+
+   ✅ Global security active (settings.json + CLAUDE.md)
    ✅ Documentation system ready (3 active files, 17KB total)
-   ✅ Security protocols active (.env.honeypot testing)
    ✅ Archive system organized (bookmarks/ + reference/)
    ✅ Setup wizard archived to MD-ARCHIVE/reference/
    ✅ Project optimized for maximum Claude Code productivity
-   
+
    **Your project now has battle-tested AI-assisted development setup!**
-   
+
    📋 Next Steps:
    1. Tell Claude: "Read @MD-ACTIVE/ and session start"
    2. Claude will acknowledge security protocols and read all 3 files
    3. Your top priorities are tracked and ready
    4. Technical Mastery Reference will grow as you solve problems
-   5. Test security: Try "read @.env.honeypot" (Claude should refuse)
-   
+
+   🔒 **Security Note**: Global deny rules protect ALL your projects.
+   Claude physically cannot read .env files, Config.swift, etc.
+
    🚀 **Ready for maximum productivity with bulletproof security!**
    ```
 
