@@ -19,8 +19,8 @@
 
 ## About
 
-### As used to build [Scribefully!](https://scribefully.com)
-I came up with this wizard (in its various flavors) to help me build Scribefully (and several other projects I'm working on). Scribefully is a place for experts to create a beautiful portfolio of their best work -- articles, videos, code, podcasts, etc -- and share it in a Reddit-inspired community of other experts, thought leaders, academics, professionals, and creators.
+### As used to build [Scribefully](https://scribefully.com) and [FloodRoute](https://floodroute.com) my first-ever iOS app, in just 13 days!
+I came up with this wizard (in its various flavors) to help me build Scribefully, FloodRoute, and several other projects I'm working on. Scribefully is a place for experts to create a beautiful portfolio of their best work -- articles, videos, code, podcasts, etc -- and share it in a Reddit-inspired community of other experts, thought leaders, academics, professionals, and creators. FloodRoute is the only app on the App Store that estimates foad flooding due to king tides.
 
 ## Full Setup Wizard Details
 
