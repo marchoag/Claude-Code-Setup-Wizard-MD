@@ -75,11 +75,15 @@ On “Session end”:
 5. Update the Technical Reference with any new patterns.
 6. Run Local CI: `npm run ci`. Fix issues before proceeding.
 7. (If using timer) capture session end and duration: `node scripts/session-timer.js end`
-8. Ask: “Ready to commit and push these changes? (y/n)”
-9. If yes:
-   - Commit message style: `✅ [Feature]: short user-facing description`
-   - Push according to your repo’s branch/deploy rules.
-10. Confirm: “Session complete: [commit message] → pushed. Ready for next session.”
+8. Ask: “Ready to commit and open a PR? (y/n)”
+9. If yes, commit with the message style `✅ [Feature]: short user-facing description`, then choose a path based on the current branch:
+   - **On a feature branch (default)**: `git push -u origin <branch>` → `gh pr create --fill` → return the PR URL → wait for the human to review the diff. On confirmation, run `gh pr merge --squash --delete-branch`.
+   - **On main**: only for trivial changes (hotfix, docs typo). Commit and `git push origin main`.
+   - **Ambiguous**: ask which path before pushing.
+10. Confirm accurately for the path taken: `Session complete: PR #N opened — [URL]` or `Session complete: [commit message] → pushed to main`.
+
+### Why PR-first (even solo)
+Opening a PR forces a diff review, leaves a reviewable artifact on GitHub, plays nicely with CI gates, lets a second Claude instance review the change, and keeps `main` in a known-good deployable state.
 
 ## Technical Reference (When to Consult)
 - Search on triggers like: authentication issues, DB errors, modal conflicts, infinite loops, build/deploy failures, unexpected API responses.

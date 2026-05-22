@@ -1,6 +1,6 @@
 # Claude Code Setup Wizard
 
-**Recent Updates:** Enhanced security protocols, development workflow automation, timing analytics, complete test infrastructure, and compatibility with Codex CLI 🎉
+**Recent updates:** PR-first git workflow, security protocol refinements, dev workflow automation, optional session timing, test infrastructure, and Codex CLI compatibility.
 
 ## Choose Your Setup
 
@@ -8,7 +8,7 @@
 |---|---|---|
 | **[Download MD-SESSION-PROTOCOLS-ONLY.md](https://raw.githubusercontent.com/marchoag/Claude-Code-Setup-Wizard-MD/main/MD-SESSION-PROTOCOLS-ONLY.md)** | **[Download MD-SESSION-PROTOCOLS-TIMER.zip](https://raw.githubusercontent.com/marchoag/Claude-Code-Setup-Wizard-MD/main/MD-SESSION-PROTOCOLS-TIMER.zip)** | **[Download MD-CLAUDE-CODE-SETUP-WIZARD.md](https://raw.githubusercontent.com/marchoag/Claude-Code-Setup-Wizard-MD/main/MD-CLAUDE-CODE-SETUP-WIZARD.md)** |
 | ✅ Session start/end commands | ✅ Everything from Protocols Only | ✅ Everything from Timer Bundle |
-| ✅ Security protocols | ✅ Session timing & analytics | ✅ 21-question interactive setup |
+| ✅ Security protocols | ✅ Session timing & analytics | ✅ 12-question interactive setup |
 | ✅ Environment variable safety | ✅ Pre-push git hooks (`npm run ci`) | ✅ Automated folder creation |
 | ✅ Basic dev workflows | ✅ Ready-to-use folder structure | ✅ Technical mastery archive |
 | ✅ Works with Claude Code & Codex | ✅ **NEW:** Complete test infrastructure | ✅ Searchable knowledge base |
@@ -50,11 +50,12 @@ I came up with this wizard (in its various flavors) to help me build Scribefully
 
 ## Features
 
-  - **3-file active system** (17KB total) - never exceeds context limits
-  - **Bulletproof security** - `.env*` file protection with honeypot testing
-  - **Session automation** - automated start/end protocols with perfect handoffs
-  - **Searchable archive** - unlimited knowledge preservation without context impact
-  - **Interactive setup** - 21-question wizard customizes system for your project
+  - **3-file active system** (~17KB total) — small enough to read at every session start
+  - **Security protocols** — `.env*` file protection with optional honeypot testing
+  - **Session automation** — defined start/end protocols for clean handoffs
+  - **Searchable archive** — institutional knowledge that doesn't get loaded into context unless searched
+  - **PR-first git workflow** — feature branches and `gh pr create` by default at session end
+  - **Interactive setup** — 12-question wizard customizes the system for your project
 
 ## Security & Development Workflows
 
@@ -75,8 +76,8 @@ I came up with this wizard (in its various flavors) to help me build Scribefully
 
 ### Automation & Git Hooks
 - **Pre-push automation**: `bash scripts/setup-git-hooks.sh` auto-runs `npm run ci` before push
-- **Intelligent commits**: Session-end commits with structured messages
-- **Branch safety**: Respects your repository's branch and deployment rules
+- **Intelligent commits**: session-end commits with structured messages
+- **PR-first workflow**: feature branches push and open a PR via `gh pr create --fill` at session end; only trivial changes (docs typos, hotfixes) commit directly to main. The wizard asks before pushing when the path is ambiguous.
 
 ## ⏱️ Session Timing & Analytics (Option 2 Bundle)
 
@@ -104,7 +105,7 @@ Track development time across Claude sessions with built-in analytics:
   2. Intialize as always with `/init`
   3. Download [MD-CLAUDE-CODE-SETUP-WIZARD.md](https://raw.githubusercontent.com/marchoag/Claude-Code-Setup-Wizard-MD/main/MD-CLAUDE-CODE-SETUP-WIZARD.md)
   4. Tell Claude: `"Run @md-claude-code-setup-wizard.md"`
-  5. Answer 21 setup questions
+  5. Answer 12 setup questions
   6. Start working: `"read @MD-ACTIVE/"` then `"session start"`
 
 ## Usage & Best Practices after installation is complete
@@ -132,9 +133,12 @@ Track development time across Claude sessions with built-in analytics:
   3. Claude creates new session bookmark with big-picture summary (✅ COMPLETED, 🔄 IN PROGRESS, 🚫 BLOCKED)
   4. Claude archives previous bookmark to MD-ARCHIVE/bookmarks/
   5. Claude updates Technical Mastery Reference with new debugging patterns learned
-  6. Claude asks: "Ready to commit and deploy? (y/n)"
-  7. If yes: Claude commits with intelligent message format and pushes to main
-  8. Claude confirms: "Session complete: [commit message] → deployed. Ready for next."
+  6. Claude asks: "Ready to commit and open a PR? (y/n)"
+  7. If yes (PR-first, branch-aware):
+     - **On a feature branch (default)**: push the branch and open a PR with `gh pr create --fill`; return the URL and wait for your review. On confirmation, merge with `gh pr merge --squash --delete-branch`.
+     - **On main**: only for trivial changes (hotfix, docs typo). Commit and push directly.
+     - **Ambiguous**: Claude asks which path before pushing.
+  8. Claude confirms: `Session complete: PR #N opened — [URL]` or `Session complete: [commit message] → pushed to main`.
 
 ## Security
 
@@ -145,15 +149,15 @@ Track development time across Claude sessions with built-in analytics:
   - Keeps a running "CHANGELOG.md" in MD-ARCHIVE updated at every session end
   - Keeps a truncated "CHANGELOG-CURRENT.md" in MD-ACTIVE ~300 lines long
   - If created, will update a "technical mastery" MD file in MD-ARCHIVE to learn as you go
-  - Prompts whether to push/commit/deploy all changes at session end
+  - Prompts before any commit/push at session end (PR-first by default)
 
-## Problem Solved
+## What this solves
 
-  Claude Code sessions fail when documentation exceeds context limits. This system:
-  - Maintains 17KB active context (67% reduction from typical setups)
-  - Preserves complete project history in searchable archive
-  - Prevents session auto-compacting that loses critical information
-  - Enables perfect handoffs between sessions
+  Sessions degrade when too much documentation gets pulled into context at once. This system:
+  - Keeps the active documentation small (~17KB across 3 files)
+  - Preserves full project history in a searchable archive that isn't loaded by default
+  - Reduces session auto-compacting and the context loss that comes with it
+  - Defines explicit start/end rituals so handoffs between sessions are predictable
 
 ## Use at Your Own Risk
 

@@ -1,15 +1,15 @@
-# 🎯 THE DEFINITIVE CLAUDE CODE SETUP WIZARD
+# 🎯 Claude Code Setup Wizard
 Marc Hoag | marc@marchoag.com | github.com/marchoag | linkedin.com/in/marchoag | x.com/marchoag
 
-**Battle-Tested Documentation System for Maximum AI Productivity**  
-*Includes bulletproof security protocols and 67% context optimization*
+**Documentation system for Claude Code sessions**  
+*Includes security protocols and a small-active / searchable-archive file structure*
 
 Created: August 26, 2025
-Optimized: February 4, 2026
+Updated: May 22, 2026
 
 ---
 
-## 🎬 PURPOSE: Ultra-optimized Claude Code setup using 3 active MD files (17KB total) plus searchable archive system with bulletproof security protocols.
+## 🎬 PURPOSE: Claude Code setup using 3 active MD files plus a searchable archive, with security protocols.
 
 ---
 
@@ -82,7 +82,7 @@ The wizard will verify global security is in place. If already configured, it co
 - Security acknowledgment (complements global `~/.claude/settings.json` protection)
 - Working relationship dynamics (CEO/CTO challenge mandate)
 - Technical Mastery Reference auto-triggers
-- Git commit workflows with intelligent messages
+- Git commit + PR-first workflow with intelligent messages
 - Project-specific env var guidance
 
 ### **2. MD-YYYYMMDD-[SESSION-NAME].md** (~6KB)
@@ -99,8 +99,7 @@ The wizard will verify global security is in place. If already configured, it co
 **Usage**: Referenced for product evolution context  
 **Contains**: Last 5-10 versions with user-facing descriptions
 
-**TOTAL: ~17KB (67% reduction from previous 52KB system)**  
-**BREAKTHROUGH**: Eliminates context overflow while preserving perfect continuity
+**TOTAL: ~17KB across the 3 active files** — small enough to read at every session start without crowding the context window.
 
 ---
 
@@ -152,9 +151,9 @@ The wizard will verify global security is in place. If already configured, it co
 3. **Create** new session bookmark with big-picture summary
 4. **Archive** previous bookmark to MD-ARCHIVE/bookmarks/
 5. **Update** Technical Mastery Reference with new patterns
-6. **Ask commit prompt**: "Ready to commit and deploy? (y/n)"
-7. **Git commit & deploy** with intelligent commit message
-8. **Confirm**: "Session complete: [message] → deployed. Ready for next."
+6. **Ask commit prompt**: "Ready to commit and open a PR? (y/n)"
+7. **Git commit + PR (branch-aware)**: feature branch → push + `gh pr create --fill` → wait for review; main → direct push only for trivial changes. See the SESSION END section for full rules.
+8. **Confirm**: report the outcome accurately — PR URL opened, or commit pushed to main.
 
 ### **Automatic Technical Mastery Searches**
 Claude automatically searches when encountering:
@@ -169,28 +168,19 @@ Claude automatically searches when encountering:
 
 ---
 
-## 💡 WHY THIS SYSTEM WORKS
+## 💡 Why This Structure
 
-### **Context Window Management**
-- **Active folder**: 17KB (massive optimization breakthrough)
-- **Archive folder**: Unlimited size (searched when needed)
-- **No context overflow**: Sessions always start successfully
-- **67% reduction**: From 52KB to 17KB without losing any functionality
+### **Read-on-load vs. searched-on-demand**
+- **Active folder** is small enough to read at the start of every session.
+- **Archive folder** can grow without limit — Claude searches it when a relevant pattern comes up rather than loading it.
 
-### **Zero Information Loss**
-- **Complete history**: Every solution and pattern preserved
-- **Institutional memory**: Technical knowledge accumulates
-- **Session continuity**: Perfect handoffs between sessions
+### **Information preservation**
+- Old session bookmarks live in `MD-ARCHIVE/bookmarks/` so handoffs don't lose context.
+- Debugging patterns accumulate in the Technical Mastery Reference instead of being re-discovered each time.
 
-### **AI-Optimized Design**
-- **Readable vs Searchable**: Small files read, large files searched
-- **Automatic triggers**: Claude knows when to consult archives
-- **Pattern recognition**: Recurring issues solved with proven solutions
-
-### **Human Workflow Integration**
-- **Simple commands**: "session start" and "session end"
-- **Transparent process**: User always knows what's happening
-- **Flexible content**: Works with any project type
+### **Predictable session rituals**
+- `session start` and `session end` map to a fixed set of actions, so behavior is consistent across projects.
+- The protocol file documents both for anyone (or any model) reading the repo cold.
 
 ---
 
@@ -341,7 +331,7 @@ mv old-md-files/* MD-ARCHIVE/
 
 ---
 
-## 🔒 BULLETPROOF SECURITY PROTOCOLS
+## 🔒 Security Protocols
 
 ### Security Hierarchy
 
@@ -356,14 +346,14 @@ mv old-md-files/* MD-ARCHIVE/
 - Project-specific env var guidance (which are server-only, etc.)
 - Contextual understanding for this specific codebase
 
-### 🚨 MANDATORY: .ENV FILE PROTECTION
+### 🚨 .env file protection
 
-**ABSOLUTE REFUSAL POLICY**:
-- **NEVER** open, read, or print any `.env*` files (`.env`, `.env.local`, etc.)
-- **NEVER** reveal, echo, diff, or log environment VALUES
-- **ONLY** reference variable NAMES when needed
-- **CLIENT CODE**: Use only `NEXT_PUBLIC_*` environment variables
-- **SERVER CODE**: `SUPABASE_SERVICE_ROLE_KEY`, `RESEND_API_KEY` only in route handlers or `lib/server/*`
+**Refusal policy**:
+- Never open, read, or print any `.env*` files (`.env`, `.env.local`, etc.)
+- Never reveal, echo, diff, or log environment values
+- Reference variable **names** only
+- Client code: use only `NEXT_PUBLIC_*` environment variables
+- Server code: `SUPABASE_SERVICE_ROLE_KEY`, `RESEND_API_KEY`, and similar belong only in route handlers or `lib/server/*`
 
 **CLAUDE RESPONSE** when asked to read `.env*`:
 *"For safety, I won't open or print `.env*` files or secret values. I can reference variable NAMES only."*
@@ -410,8 +400,7 @@ mv old-md-files/* MD-ARCHIVE/
 - "read the files"
 - "read MD-ACTIVE"
 
-**FAILURE TO EXECUTE = BROKEN SYSTEM**
-If you do not automatically execute this protocol when these phrases are detected, the entire documentation strategy fails. This is the core promise of the system.
+If you don't execute this protocol when these phrases are detected, session continuity breaks — the user has to re-establish context manually. Run the steps above as soon as you recognize the trigger.
 
 ### 🚨 CRITICAL: SESSION END TRIGGER BEHAVIOR
 
@@ -429,11 +418,22 @@ If you do not automatically execute this protocol when these phrases are detecte
 
 3. **Update Technical Mastery Reference** with any new patterns learned
 
-4. **Git commit & deploy** with intelligent commit message format:
-   - `✅ [Feature]: Brief user-facing description`
-   - Always push to main branch (auto-deploys)
+4. **Git commit + PR (branch-aware)**: Stage and commit with the message format `✅ [Feature]: Brief user-facing description`, then choose a path based on the current branch:
+   - **On a feature branch (default)**: `git push -u origin <branch>` → `gh pr create --fill` → return the PR URL → wait for the user to review the diff. On the user's confirmation, run `gh pr merge --squash --delete-branch`.
+   - **On main**: only acceptable for trivial changes (hotfix, docs typo, README tweak). Commit and `git push origin main` directly.
+   - **Ambiguous**: ask the user which path to take before pushing.
 
-5. **Confirm completion**: "Session complete: [commit message] → deployed. Ready for next session."
+5. **Confirm completion**: Report the result accurately for the path taken — e.g., `Session complete: PR #N opened — [URL]` or `Session complete: [commit message] → pushed to main`.
+
+### Why PRs matter even for solo builders
+
+The default is a feature branch + PR even when you're the only contributor. Reasons:
+
+- **Forced diff review**: opening a PR makes you (or another Claude instance) actually look at the diff before it lands on main.
+- **Reviewable artifact**: the PR is a persistent record on GitHub — easier to revisit than a commit dropped onto main.
+- **CI gate compatibility**: branch protection, required checks, and review requirements all key off PRs.
+- **Second-opinion review**: you can have a separate Claude session (or `/ultrareview`) review the PR before merging.
+- **Protects main**: main stays a known-good deployable state; broken work-in-progress lives on the branch.
 
 **TRIGGER PHRASES THAT REQUIRE THIS BEHAVIOR:**
 - "session end"
@@ -479,7 +479,7 @@ After setup, prompt user with these questions to populate the files:
 
 #### **📋 Project Essentials (Questions 4-7 of 12)**
 - **Q4/12**: "Project name and tech stack? (React, Python, etc.)"
-- **Q5/12**: "Current version/status and main deployment branch?"
+- **Q5/12**: "Current version/status, main deployment branch, and git workflow? (PR-first is the default — note any exceptions, e.g. docs-only commits straight to main.)"
 - **Q6/12**: "Development commands? (npm run dev, build, test, etc.)"
 - **Q7/12**: "Where deployed? (Vercel, AWS, local only, etc.)"
 
@@ -520,24 +520,20 @@ After setup:
    mv MD-CLAUDE-CODE-SETUP-WIZARD.md MD-ARCHIVE/
    ```
 
-2. **Verify clean project state**: Optimized 3-file system:
+2. **Verify clean project state**: 3-file active system:
    - Global security configured (`~/.claude/settings.json` + `~/.claude/CLAUDE.md`)
-   - MD-ACTIVE/ contains exactly 3 files (17KB total)
+   - MD-ACTIVE/ contains exactly 3 files (~17KB total)
    - MD-ARCHIVE/ organized with bookmarks/ and reference/ folders
    - Setup wizard moved to MD-ARCHIVE/reference/
-   - Project ready for maximum productivity
 
-3. **Clean goodbye message**:
+3. **Goodbye message**:
    ```
-   🎉 **SETUP WIZARD COMPLETE!**
+   🎉 **Setup complete.**
 
    ✅ Global security active (settings.json + CLAUDE.md)
-   ✅ Documentation system ready (3 active files, 17KB total)
+   ✅ Documentation system ready (3 active files, ~17KB total)
    ✅ Archive system organized (bookmarks/ + reference/)
    ✅ Setup wizard archived to MD-ARCHIVE/reference/
-   ✅ Project optimized for maximum Claude Code productivity
-
-   **Your project now has battle-tested AI-assisted development setup!**
 
    📋 Next Steps:
    1. Tell Claude: "Read @MD-ACTIVE/ and session start"
@@ -545,10 +541,10 @@ After setup:
    3. Your top priorities are tracked and ready
    4. Technical Mastery Reference will grow as you solve problems
 
-   🔒 **Security Note**: Global deny rules protect ALL your projects.
-   Claude physically cannot read .env files, Config.swift, etc.
+   🔒 **Security Note**: Global deny rules protect all your projects.
+   Claude cannot read .env files, Config.swift, and other denied paths.
 
-   🚀 **Ready for maximum productivity with bulletproof security!**
+   🚀 **Ready to go.**
    ```
 
 ### **WIZARD CONVERSATION EXAMPLE**
@@ -556,30 +552,25 @@ After setup:
 ```
 🤖 Claude: "I've created your MD-ACTIVE/ and MD-ARCHIVE/ folders! Now let's customize the system for you.
 
-🤝 Working Relationship (Questions 1-4 of 21):
-Q1/21 - What's your role in this project?"
+🤝 Working Relationship (Questions 1-3 of 12):
+Q1/12 - What's your role in this project?"
 
 👤 User: "I'm the CEO and founder, but I'm not a developer"
 
 🤖 Claude: "Got it! So I should challenge technical decisions and explain things clearly.
-Q2/21 - What's your technical background?"
+Q2/12 - What's your technical background?"
 
 👤 User: "Non-technical founder, I understand concepts but don't code"
 
 🤖 Claude: "Perfect. That helps me know how to explain things.
-Q3/21 - How should I push back when I think an approach might be wrong?"
+Q3/12 - How should I push back when I think an approach might be wrong?"
 
 👤 User: "Be direct, offer alternatives, don't just say yes to everything"
 
-🤖 Claude: "Excellent. I'll challenge decisions constructively.
-Q4/21 - What's your preferred working style?"
+🤖 Claude: "📋 Project Essentials (Questions 4-7 of 12):
+Q4/12 - What's your project name and tech stack?"
 
-👤 User: "Fast iteration, get something working quickly then polish"
-
-🤖 Claude: "📋 Project Context (Questions 5-9 of 21):
-Q5/21 - What's your project name?"
-
-[Continue through all 21 questions with progress tracking...]
+[Continue through all 12 questions with progress tracking...]
 ```
 
 ### **FILE TEMPLATES TO AUTO-GENERATE**
@@ -603,7 +594,7 @@ Based on wizard answers, create files with this structure:
 
 **Technical Mastery**:
 - Empty template with standard debugging categories
-- Seeded only with patterns they mentioned in Q19-21
+- Seeded only with patterns they mentioned in Q10-12
 - Ready to grow with project-specific solutions
 
 #### **Technical Mastery Reference Template**
@@ -618,7 +609,7 @@ Based on wizard answers, create files with this structure:
 ## 🎯 **CRITICAL: SESSION START CHECKLIST**
 
 ### **Working Relationship & Role Dynamics**
-[Populated from setup wizard answers Q1-Q4]
+[Populated from setup wizard answers Q1-Q3]
 
 ---
 
@@ -658,7 +649,7 @@ Based on wizard answers, create files with this structure:
 ---
 
 ## 🎯 **PROJECT-SPECIFIC PATTERNS**
-[Seeded with patterns mentioned in Q19-21]
+[Seeded with patterns mentioned in Q10-12]
 
 ---
 
@@ -668,23 +659,17 @@ Based on wizard answers, create files with this structure:
 ### **SUCCESS CONFIRMATION**
 
 End with:
-"✅ **SETUP COMPLETE!** Your documentation system is ready. 
-- Total context: ~17KB (67% optimized breakthrough)
+"✅ **Setup complete.** Your documentation system is ready.
+- Active context: ~17KB across 3 files
 - Say 'session start' to test the system
 - Say 'session end' when done to save progress
 
-Your top 3 priorities are now tracked. Ready to work!"
+Your top 3 priorities are now tracked. Ready to work."
 
 ---
 
-**🏆 RESULT: MAXIMUM CLAUDE CODE PRODUCTIVITY**
+## Closing notes
 
-This system transforms Claude Code from a session-limited tool into a continuously improving development partner with perfect memory, proven debugging patterns, and seamless workflow integration.
+This setup gives Claude a predictable place to read context at the start of a session and a predictable place to write context at the end. The archive grows over time so that recurring patterns get solved once and remembered.
 
-**Use this strategy on ANY project to achieve optimal AI-assisted development productivity.**
-
----
-
-_This documentation represents battle-tested experience from intensive Claude Code usage. The patterns and optimizations are proven to work at scale._
-
-**DO NOT MODIFY THIS FILE WITHOUT CRITICAL NEED - IT REPRESENTS COMPLETE OPTIMIZATION**
+Iterate on it. If something doesn't fit your project — different folder names, different commit conventions, different session triggers — change it. The structure is a starting point, not a contract.
