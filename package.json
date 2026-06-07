@@ -9,7 +9,11 @@
     "lint": "eslint . --ext .js,.ts,.tsx",
     "typecheck": "tsc --noEmit",
     "dev": "echo 'Add your dev command here'",
-    "dev:all": "concurrently \"npm run dev\" \"npm run test:watch\""
+    "dev:all": "concurrently \"npm run dev\" \"npm run test:watch\"",
+    "contrib": "node scripts/contribution.js",
+    "contrib:start": "node scripts/contribution.js start",
+    "contrib:status": "node scripts/contribution.js status",
+    "contrib:end": "node scripts/contribution.js end"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

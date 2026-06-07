@@ -14,6 +14,7 @@ This public-friendly protocol explains how sessions are started, ended, and kept
    - Today’s priorities (from bookmark)
 3. Create a short Todo list and start the first task.
 4. Keep the Technical Reference ready; search it on relevant triggers.
+5. Start the authorship log: `node scripts/contribution.js start "<session focus>"` (see Authorship & Human Contribution Record).
 
 ## Security Policy (Public Safe)
 - Never open or read any `.env*` files (e.g., `.env`, `.env.local`, `.env.*`).
@@ -59,6 +60,27 @@ Outputs
 - Cumulative log: `MD-ARCHIVE/reference/SESSION-TIMES.json`
 - Human summary: `MD-ARCHIVE/reference/SESSION-TIMES.md` (totals + recent sessions)
 
+## Authorship & Human Contribution Record (Optional, Share-Safe)
+This project is AI-assisted. To support attribution and any copyright claim in the
+*human-authored* expression and the human's selection/arrangement, record human
+creative contributions as they happen. Claude proposes entries inline; the human
+confirms before they are logged.
+
+- Start at session start: `node scripts/contribution.js start "<focus>"`
+- Log as you go: `node scripts/contribution.js add <type> "<text>"`
+  - Types: `authored`, `edit`, `selection`, `rejection`, `decision`, `direction`, `ai-assisted`, `verify`
+- Finalize at session end: `node scripts/contribution.js end --pr <N>` (ties the entry to the session's commit SHAs, updates the ledger, and prints a PR attestation block)
+
+Outputs
+- Working draft: `MD-ACTIVE/.contribution-draft.json`
+- Cumulative ledger: `MD-ARCHIVE/reference/AUTHORSHIP-LOG.json`
+- Human-readable log: `MD-ARCHIVE/reference/AUTHORSHIP-LOG.md`
+
+Honest limits: this is contemporaneous evidence and disclosure — **not** legal advice
+and **not** a guarantee of copyright registrability. Claim only genuine human
+authorship; disclose AI-assisted portions. Prompting alone is generally weak;
+human-authored text, edits, selection, and arrangement are what carry a claim.
+
 ## Session Start — ACK (must be stated)
 “I will not open or read any `.env*` files. I will reference env by NAME only. Client uses `NEXT_PUBLIC_*` only. Server-only: `SUPABASE_SERVICE_ROLE_KEY`, `RESEND_API_KEY`.”
 
@@ -75,12 +97,13 @@ On “Session end”:
 5. Update the Technical Reference with any new patterns.
 6. Run Local CI: `npm run ci`. Fix issues before proceeding.
 7. (If using timer) capture session end and duration: `node scripts/session-timer.js end`
-8. Ask: “Ready to commit and open a PR? (y/n)”
-9. If yes, commit with the message style `✅ [Feature]: short user-facing description`, then choose a path based on the current branch:
+8. (If using authorship log) finalize: `node scripts/contribution.js end --pr <N>` — then paste the printed attestation block into the PR body.
+9. Ask: “Ready to commit and open a PR? (y/n)”
+10. If yes, commit with the message style `✅ [Feature]: short user-facing description`, then choose a path based on the current branch:
    - **On a feature branch (default)**: `git push -u origin <branch>` → `gh pr create --fill` → return the PR URL → wait for the human to review the diff. On confirmation, run `gh pr merge --squash --delete-branch`.
    - **On main**: only for trivial changes (hotfix, docs typo). Commit and `git push origin main`.
    - **Ambiguous**: ask which path before pushing.
-10. Confirm accurately for the path taken: `Session complete: PR #N opened — [URL]` or `Session complete: [commit message] → pushed to main`.
+11. Confirm accurately for the path taken: `Session complete: PR #N opened — [URL]` or `Session complete: [commit message] → pushed to main`.
 
 ### Why PR-first (even solo)
 Opening a PR forces a diff review, leaves a reviewable artifact on GitHub, plays nicely with CI gates, lets a second Claude instance review the change, and keeps `main` in a known-good deployable state.
